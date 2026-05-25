@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=72.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[project]
+name = "synapseai-backend"
+version = "0.1.0"
+description = "SynapseAI Backend API"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "sqlalchemy>=2.0",
+    "alembic",
+    "asyncpg",
+    "redis",
+    "celery",
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
+    "python-multipart",
+    "httpx",
+    "openai",
+    "tiktoken",
+    "boto3",
+    "stripe",
+    "emails",
+    "python-dotenv",
+    "slowapi",
+    "websockets",
+    "pypdf2",
+    "pdfplumber",
+    "python-docx",
+    "pydub",
+    "pgvector",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "httpx",
+    "ruff",
+    "black",
+    "mypy",
+    "pre-commit",
+]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
