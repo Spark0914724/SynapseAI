@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.v1.endpoints import auth
+from app.api.v1.endpoints import auth, billing, chat
 
 api_router = APIRouter()
 
@@ -10,3 +10,9 @@ async def health_check():
 
 # ── Auth ───────────────────────────────────────────────────────────────────────
 api_router.include_router(auth.router)
+
+# ── Billing ────────────────────────────────────────────────────────────────────
+api_router.include_router(billing.router)
+
+# ── Chat ───────────────────────────────────────────────────────────────────────
+api_router.include_router(chat.router)

@@ -35,9 +35,10 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
     ALGORITHM: str = "HS256"
 
-    # OpenAI
+    # OpenAI / OpenRouter
     OPENAI_API_KEY: str
-    OPENAI_DEFAULT_MODEL: str = "gpt-4o"
+    OPENAI_BASE_URL: str = "https://openrouter.ai/api/v1"
+    OPENAI_DEFAULT_MODEL: str = "deepseek/deepseek-v4-flash:free"
     OPENAI_EMBEDDING_MODEL: str = "text-embedding-3-small"
 
     # Stripe
