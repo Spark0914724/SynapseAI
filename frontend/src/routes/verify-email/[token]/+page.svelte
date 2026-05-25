@@ -6,7 +6,7 @@
 	import Button from '$lib/components/ui/Button.svelte';
 	import { authApi } from '$lib/api';
 
-	const token = $derived($page.params.token);
+	const token = $derived($page.params.token ?? '');
 
 	let status = $state<'loading' | 'success' | 'error'>('loading');
 	let message = $state('');

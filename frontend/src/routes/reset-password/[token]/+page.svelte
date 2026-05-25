@@ -8,7 +8,7 @@
 	import { authApi } from '$lib/api';
 	import { z } from 'zod';
 
-	const token = $derived($page.params.token);
+	const token = $derived($page.params.token ?? '');
 
 	let password = $state('');
 	let confirm_password = $state('');
